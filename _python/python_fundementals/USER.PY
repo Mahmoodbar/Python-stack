@@ -22,6 +22,7 @@ mahmood = User("Mahmood Barakat", "email@email")
 mostafa = User("mostafa barakat", 'email@@email')
 mohamad = User ('Mohamad Barakat', 'email@@@email')
 
+
 mahmood.make_deposit(8000)
 mahmood.make_deposit(200)
 mahmood.make_deposit(300)
@@ -39,5 +40,5 @@ mohamad.make_withdrawal(600)
 
 mahmood.transfer_money(mohamad ,800)
 
-mohamad.display_user_balance()
+mohamad.display_user_balance('account_balance')
 mahmood.display_user_balance()
