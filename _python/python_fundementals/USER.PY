@@ -40,5 +40,5 @@ mohamad.make_withdrawal(600)
 
 mahmood.transfer_money(mohamad ,800)
 
-mohamad.display_user_balance('account_balance')
+mohamad.display_user_balance()
 mahmood.display_user_balance()
