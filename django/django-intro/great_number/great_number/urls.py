@@ -1,4 +1,4 @@
-"""dojo URL Configuration
+"""great_number URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -17,5 +17,5 @@ Including another URLconf
 from django.urls import path,include
 
 urlpatterns = [
-    path('', include('dojo_app.urls'))
+    path('', include('great_num_app.urls'))
 ]

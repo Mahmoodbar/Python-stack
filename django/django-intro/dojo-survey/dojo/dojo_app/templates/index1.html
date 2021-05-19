@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body> <center>
     <form action="/result" method="post">
-        First Name <input type="text" name='firstname'  >
+      {% csrf_token %}
+        First Name <input type="text" name='firstname'  > <br> <br>
         Last Name <input type="text" name="lastname"> <br><br>
         dojo location   <select name="dojolocation">
             <option>Jerusalem</option>
@@ -23,8 +24,9 @@
             <option >C++</option>
             <option >JAVA</option>
           </select><br><br>
-        comment (optional): <div><input type="text"  style="width: 300px; height: 100px; border: 1px solid black;" name="comment"> </div> <br><br>
+        comment (optional): <br> <input type="textarea"  style="width: 300px; height: 100px; border: 1px solid black;" name="tex">  <br><br>
         <button>Submit</button>
     </form>
+  </center>
 </body>
 </html>
