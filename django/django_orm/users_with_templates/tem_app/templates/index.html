@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+       
+       
+        <h2 class="all", style="background-color:aqua;">All the users</h2>    
+            
+        <table>
+            <form action="add/" , method="POST">
+                {% csrf_token %}
+            <tr>
+                <th>ID</th> 
+                <th>Name</th>
+                <th>Email</th>
+                <th> age</th>
+            </tr>
+            
+                {%for i in x%}
+                <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.first_name}}{{i.last_name}}</td>
+                <td>{{i.email_address}}</td>
+                <td>{{i.age}}</td>
+    
+                {%endfor%}
+            
+              </tr>
+        </table>
+        <h2 class="add", style="background-color: rgb(170, 60, 60) ">Add a User</h2>
+        First Name:<input type="text" name="first">
+        Last Name: <input type="text" name="last">
+        <br><br>
+        Email : <input type="text" name="email">
+        Age: <input type="text" name="age">
+        <br><br>
+        <button type="submit">ADD</button>
+    </form>
+          
+    </center>
+    
+</body>
+</html>
