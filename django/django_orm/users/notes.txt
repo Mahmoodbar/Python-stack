@@ -1,0 +1,33 @@
+
+>>> from users_app.models import *
+
+>>> newly_created_users = Users(first_name='mahmood', last_name='barakat',email_address='ma@@ma',age=23)
+
+>>> newly_created_user = User(first_name='mahmood', last_name='barakat',email_address='ma@@ma',age=23)
+>>> newly_created_movie.save()
+
+>>> User.objects.create(first_name='mahmood', last_name='Barakat',email_address='..@@..',age=24)
+<User: User object (2)>
+>>> User.objects.create(first_name='mostafa',last_name='barkat',email_address='mostafa@mostafa',age=25)
+<User: User object (3)>
+>>> User.objects.create(first_name='mhmd',last_name='barakat',email_address='mhmd@mhmd',age=33)
+<User: User object (4)>
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (2)>, <User: User object (3)>, <User: User object (4)>]>
+
+
+
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (2)>, <User: User object (3)>, <User: User object (4)>]>
+>>> User.objects.filter(first_name='mahmood')
+<QuerySet [<User: User object (1)>, <User: User object (2)>]>
+>>> User.objects.first()
+<User: User object (1)>
+>>> User.objects.last()
+<User: User object (4)>
+>>> User_to_update = User.objects.get(id=3)
+>>> User_to_update.last_name='pancakes'
+>>> User_to_delete=User.objects.get(id=2)
+>>> User_to_delete.delete()
+(1, {'users_app.User': 1})
+>>>>>> User.objects.all().order_by('first_name')
