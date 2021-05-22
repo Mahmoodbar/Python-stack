@@ -10,8 +10,7 @@ def first(request):
 
 def second(request):
     
-    number = int(request.POST['number'])
-    
+    number =
     if number > 0 and number < 100:
         if number == num:
             # num = random.randint(1, 100)
