@@ -1,0 +1,77 @@
+from books_app.models import *
+>>> Book.objects.create(title='csharp')
+<Book: Book object (1)>
+>>> Book.objects.create(title='java')
+<Book: Book object (2)>
+>>> Book.objects.create(title='python')
+<Book: Book object (3)>
+>>> Book.objects.create(title='php')
+<Book: Book object (4)>
+>>> Book.objects.create(title='ruby')
+<Book: Book object (5)>
+>>> Author.objects.create(first_name='jane',last_name='asutin', books=Book.objects.get(id=1))
+Author.objects.create(first_name='emily',last_name='dickson', books=Book.objects.get(id=2))
+Author.objects.create(first_name='fyodor',last_name='Dostoevsky', books=Book.objects.get(id=3))
+>>> Author.objects.create(first_name='william',last_name='sheks', books=Book.objects.get(id=4))
+<Author: Author object (4)>
+>>> Author.objects.create(first_name='lau',last_name='tzu', books=Book.objects.get(id=5))
+<Author: Author object (5)>
+
+for the NOTES
+(djangoPy3Env) D:\Testin codes\python_stack\django\django_orm\books>python manage.py makemigrations
+You are trying to add a non-nullable field 'notes' to book without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> "hello"
+Migrations for 'books_app':
+  books_app\migrations\0004_auto_20210524_1615.py
+    - Add field notes to book
+    - Alter field books on author
+
+>>> from books_app.models import *
+>>> Book_to_update=Book.objects.get(id=1)
+>>> Book_to_update.title='c#'
+>>> Book_to_update.save()
+>> Author_to_update=Author.objects.get(id=4)
+>>> Author_to_update.first_name='Bill'
+>>> Author_to_update.save()
+>>>>>> authors = []
+>>> for author in Author.objects.all():
+...     authors.append(author)
+
+>>> books = []
+>>> for book in Book.objects.all():
+...     books.append(book)
+...>>> books[0].auts.add(authors[0])
+>>> books[1].auts.add(authors[0])
+>>>
+...>>> books[0].auts.add(authors[1])
+>>> books[1].auts.add(authors[1])
+>>> books[2].auts.add(authors[1])
+>>>
+
+>>> books[0].auts.add(authors[2])
+>>> books[1].auts.add(authors[2])
+>>> books[2].auts.add(authors[2])
+>>> books[3].auts.add(authors[2])
+>>>
+>>> books[0].auts.add(authors[3])
+>>> books[1].auts.add(authors[3])
+>>> books[2].auts.add(authors[3])
+>>> books[3].auts.add(authors[3])
+>>> books[4].auts.add(authors[3])
+
+>>> books[2].auts.all()
+<QuerySet [<Author: Author object (2)>]>
+
+>>> books[2].auts.remove(authors[0])
+ books[2].auts.add(authors[4])
+
+
+>>> books[4].auts.all()
+
