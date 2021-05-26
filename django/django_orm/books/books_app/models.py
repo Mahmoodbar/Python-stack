@@ -17,3 +17,10 @@ class Author(models.Model):
     created_at = models.DateField(auto_now_add=True)
     updated_at= models.DateField(auto_now=True)
     
+
+def check_book(num):
+    # fbook = Author.objects.filter(id=int(num))
+    cbook = Book.objects.filter(id= int(num))
+    # print(cbook[0].title)
+    return cbook[0]
+    

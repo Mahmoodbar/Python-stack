@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <center>
+
+        <div class = "add">
+            <h2>Add a Dojo</h2><br>
+            <form action="add" method="POST">
+                {% csrf_token %}
+                name:<input type="text" name="name"><br><br>
+                city:<input type="text" name="city"><br><br>
+                state:<input type="text" name="state"><br><br>
+
+
+                <input type="hidden" name="class" value="dojo">
+                <button type="submit">ADD</button>
+            </form>
+        </div>
+        <div class="add">
+
+            <h2>Add a NINJA</h2><br>
+            <form action="add" method="POST">
+                {% csrf_token %}
+                first name:<input type="text" name="first"><br><br>
+                last name:<input type="text" name="last"><br><br>
+               Dojo <select name="optiondojo" id="dojo">
+                    {% for dojo in all_dojo %}
+                   <option value="{{dojo.name}}">{{dojo.name}}</option>
+                    {% endfor %}
+                </select> <br> <br>
+
+
+                <input type="hidden" name="class" value="ninja">
+                <button type="submit">ADD</button>
+            </form>
+        </div>
+
+        <h1>All the dojos</h1>
+        <form action="add" method="post">
+            <ul>
+                {% for dojo in all_dojo %}
+                <li>
+                    {{dojo.name}}
+                   
+                    <ul>
+                        <!-- looping through each author's books! -->
+                        {% for j in i.ninja.all%}
+                        <li><em>{{ninja.first_name}}{{ninja.last_name}}</em></li>
+                        {% endfor %}
+                    </ul>
+                    
+                </li>
+                {% endfor %}
+            </ul>
+        </form>
+    </center>
+</body>
+
+</html>
