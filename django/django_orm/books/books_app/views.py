@@ -23,7 +23,9 @@ def view(request,num):
   
     if (check_book1):
         context = {
-        'dbooks' : check_book1
+        'dbooks' : check_book1,
+         'zbooks' : Book.objects.all()
+
         
       }
 

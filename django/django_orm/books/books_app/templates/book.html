@@ -17,6 +17,14 @@
     Authors :{% for author in dbooks.auts.all %}
         <h4>{{author.first_name}} {{author.last_name}} </h4>
       {% endfor %}
+         <select name="optionAuthor" id="optionAuthor">
+        {% for i in zbooks %}
+       <option>{{i.title}}</option>
+        {% endfor %}
+
+    </select> <br> <br>
+
+    <button type="submit">ADD</button
    
 </body>
 </html>
